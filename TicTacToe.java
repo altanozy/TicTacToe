@@ -110,11 +110,9 @@ public class TicTacToe extends JFrame {
             clickedButton.setText(currentPlayer);
             if (checkForWin()) {
                 gameEnded = true;
-                // MODIFIED: Call our new game over dialog instead of the simple message.
                 showGameOverDialog("Player " + currentPlayer + " wins!");
             } else if (isBoardFull()) {
                 gameEnded = true;
-                // MODIFIED: Call our new game over dialog instead of the simple message.
                 showGameOverDialog("It's a tie!");
             } else {
                 currentPlayer = (currentPlayer.equals("X")) ? "O" : "X";
@@ -181,13 +179,11 @@ public class TicTacToe extends JFrame {
     }
 
     // --- Main Method (Entry Point) ---
-    // NEW, CORRECTED WAY
 public static void main(String[] args) {
     SwingUtilities.invokeLater(() -> {
         TicTacToe game = new TicTacToe(); // Create an instance of the game
         game.setVisible(true);             // 1. Make the window appear first (at the default corner)
         game.setLocationRelativeTo(null);
-         // 2. Immediately tell the visible window to move to the center
     });
 }
 }
